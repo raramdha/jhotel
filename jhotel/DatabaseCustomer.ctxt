@@ -1,14 +1,16 @@
 #BlueJ class context
 comment0.target=DatabaseCustomer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseCustomer\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Class\ DatabaseCustomer\ menggambarkan\ detail\ dari\r\n\ cara-cara\ memodifikasi\ data\ Customer\r\n\r\n\ @author\ (Ramdhaidfitri\ Martmis)\r\n\ @version\ (1\ Maret\ 2018)\r\n
 comment1.params=
 comment1.target=DatabaseCustomer()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseCustomer\r\n
+comment1.text=\r\n\ Constructor\ untuk\ object\ dari\ class\ DatabaseCustomer\r\n
 comment2.params=baru
 comment2.target=boolean\ addCustomer(Customer)
-comment2.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
+comment2.text=\r\n\ Method\ untuk\ menambahkan\ Customer\ baru\ ke\ dalam\r\n\ database\r\n\ \r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
 comment3.params=id
 comment3.target=boolean\ removeCustomer(int)
+comment3.text=\r\n\ Method\ untuk\ menghapus\ Customer\ dari\ database\ \r\n\ menggunakan\ id\ customer\r\n\ \r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
 comment4.params=
 comment4.target=java.lang.String[]\ getCustomerDatabase()
+comment4.text=\r\n\ Method\ untuk\ mengambil\ database\ customer\r\n\ \r\n\ @return\ \ default\ dari\ tipe\ data\ String\r\n
 numComments=5

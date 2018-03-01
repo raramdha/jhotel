@@ -2,43 +2,58 @@
 /**
  * Write a description of class Customer here.
  *
- * @author (your name)
+ * @author (Ramdha)
  * @version (a version number or a date)
  */
 public class Customer
 {
+    //variabel-variabel yang digunakan
+    protected int id;
+    protected String nama;
     /**
-     * Constructor for objects of class Customer
+     * Constructor untuk object dari class Customer
      */
-    protected Customer()
+    public Customer(int id, String nama)
     {
-        // initialise instance variables
-        int id = 0;
-        String nama = null;
+        this.id = id;
+        this.nama = nama;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Method untuk mengambil id Customer dalam bentuk 
+     * integer
+     * 
+     * @return  id customer
      */
-    public void Customer (int id, String nama){
-        return;
-    }
     public int getID()
     {
-        // put your code here
-        return 0;
+        return id;
     }
+    /**
+     * Method untuk mengambil nama customer dalam bentuk 
+     * integer
+     * 
+     * @return  nama customer
+     */
     public String getNama(){
-        return null;
+        return nama;
     }
+    /**
+     * Method untuk menentukan nama customer dalam bentuk 
+     * integer
+     * 
+     * @param  id customer
+     */
     public void setID(int id){
-        return;
+        this.id = id;
     }
     public void setNama(String nama){
-        return;
+        this.nama = nama;
     }
+    public void printData()
+    {
+        System.out.println(nama);
+    }
+    
 }
 

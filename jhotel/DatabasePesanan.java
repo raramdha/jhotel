@@ -1,47 +1,67 @@
 
 /**
- * Write a description of class DatabasePesanan here.
+ * Class DatabasePesanan menggambarkan detail dari
+ * cara-cara memodifikasi data Pesanan
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (1 Maret 2018)
  */
 public class DatabasePesanan
 {
+    //variabel yang digunakan
+    private String[] list_pesanan;
     /**
-     * Constructor for objects of class DatabasePesanan
+     * Constructor untuk object dari class DatabasePesanan
      */
-    private DatabasePesanan()
+    public DatabasePesanan()
     {
         // initialise instance variables
-        String[] list_pesanan = null;
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Method untuk menambahkan Pesanan baru ke dalam
+     * database Pesanan
+     * 
+     * @return  default dari tipe data boolean
      */
     public boolean addPesanan(Pesanan baru)
     {
-        // put your code here
         return false;
     }
+    /**
+     * Method untuk menghapus Pesanan dari
+     * database Pesanan
+     * 
+     * @return  default dari tipe data boolean
+     */
     public boolean removePesanan(Pesanan pesan)
     {
-        // put your code here
         return false;
     }
+    /**
+     * Method untuk mengambil data Pesanan dari database
+     * 
+     * @return  default dari tipe data Pesanan
+     */
     public Pesanan getPesanan(Customer cust)
     {
         return null;
     }
+    /**
+     * Method untuk mengambil isi database Pesanan
+     * 
+     * @return  default dari tipe data String
+     */
     public String getPesananDatabase()
     {
         return null;
     }
+    /**
+     * Method untuk membatalkan pesanan
+     * 
+     */
     public void pesananDibatalkan(Pesanan pesan)
     {
-        return;
+
     }
 }

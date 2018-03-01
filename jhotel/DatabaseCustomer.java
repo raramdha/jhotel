@@ -1,37 +1,49 @@
 
 /**
- * Write a description of class DatabaseCustomer here.
+ * Class DatabaseCustomer menggambarkan detail dari
+ * cara-cara memodifikasi data Customer
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (1 Maret 2018)
  */
 public class DatabaseCustomer
 {
+    //variabel yang digunakan
+    private String[] list_customer;
     /**
-     * Constructor for objects of class DatabaseCustomer
+     * Constructor untuk object dari class DatabaseCustomer
      */
-    private DatabaseCustomer()
+    public DatabaseCustomer()
     {
         // initialise instance variables
-        String[] list_customer = null;
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Method untuk menambahkan Customer baru ke dalam
+     * database
+     * 
+     * @return  default dari tipe data boolean
      */
     public boolean addCustomer(Customer baru)
     {
         // put your code here
         return false;
     }
+    /**
+     * Method untuk menghapus Customer dari database 
+     * menggunakan id customer
+     * 
+     * @return  default dari tipe data boolean
+     */
     public boolean removeCustomer(int id)
     {
-        // put your code here
         return false;
     }
+    /**
+     * Method untuk mengambil database customer
+     * 
+     * @return  default dari tipe data String
+     */
     public String[] getCustomerDatabase()
     {
         return null;

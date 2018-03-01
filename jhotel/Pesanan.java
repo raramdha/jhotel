@@ -2,25 +2,26 @@
 /**
  * Write a description of class Pesanan here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Ramdha)
+ * @version (28 February 2018)
  */
 public class Pesanan
 {
-    // instance variables - replace the example below with your own
-
+    // nstance variables - replace the example below with your own
+        private double biaya;
+        private Customer pelanggan;
+        private String nama_pelanggan;
+        private String jenis_kamar;
+        private boolean isDiproses;
+        private boolean isSelesai;
     /**
      * Constructor for objects of class Pesanan
      */
-    private Pesanan()
+    public Pesanan(double biaya, Customer pelanggan)
     {
         // initialise instance variables
-        double biaya = 0;
-        Customer pelanggan = new Customer();
-        String nama_pelanggan = null;
-        String jenis_kamar = null;
-        boolean isDiproses = false;
-        boolean isSelesai = false;
+        this.biaya = biaya;
+        this.pelanggan = pelanggan;
     }
 
     /**
@@ -32,31 +33,34 @@ public class Pesanan
     public void Pesanan()
     {
         // put your code here
-        return;
     }
     public double getBiaya(){
-        return 0;
+        return biaya;
     }
     public Customer getPelanggan(){
-        return null;
+        return pelanggan;
     }
     public boolean getStatusDiproses(){
-        return false;
+        return isDiproses;
     }
     public boolean getStatusSelesai(){
-        return false;
+        return isSelesai;
     }
-    public double setBiaya(double biaya){
-        return 0;
+    public void setBiaya(double biaya){
+        this.biaya = biaya;
     }
-    public Customer setPelanggan(Customer baru){
-        return null;
+    public void setPelanggan(Customer baru){
+        pelanggan = baru;
     }
-    public boolean setStatusDiproses(boolean diproses){
-        return false;
+    public void setStatusDiproses(boolean diproses){
+        isDiproses = diproses;
     }
-    public boolean setStatusSelesai(boolean diproses){
-        return false;
+    public void setStatusSelesai(boolean diproses){
+        isSelesai = diproses;
+    }
+    public void printData()
+    {
+       System.out.println(biaya);
     }
 }
     
