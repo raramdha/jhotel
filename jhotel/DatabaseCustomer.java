@@ -24,7 +24,7 @@ public class DatabaseCustomer
      * 
      * @return  default dari tipe data boolean
      */
-    public boolean addCustomer(Customer baru)
+    public static boolean addCustomer(Customer baru)
     {
         // put your code here
         return false;

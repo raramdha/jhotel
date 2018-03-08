@@ -2,8 +2,8 @@
 /**
  * Write a description of class JHotel here.
  *
- * @author (Ramdha)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri M)
+ * @version (8 Maret 2018)
  */
 public class JHotel
 {
@@ -16,9 +16,18 @@ public class JHotel
     public JHotel(){
         
     }
-    public void main(String args[])
+    public static void main(String args[])
     {
-        // put your code here
+        /*
+        Customer Ramdha = new Customer(1,"Ramdha");
+        Lokasi Solo = new Lokasi(100,450, "Solo");
+        Hotel Ibis = new Hotel("Ibis", Solo, 4);
+        Pesanan Satu = new Pesanan(300000,Ramdha);
+        Ramdha.printData();
+        Ramdha.setNama("Fitri");
+        Ramdha.printData();
+        DatabaseCustomer.addCustomer(Ramdha);
+        */
     }
     
 }

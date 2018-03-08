@@ -2,7 +2,7 @@
 /**
  * Write a description of class Pesanan here.
  *
- * @author (Ramdha)
+ * @author (Ramdhaidfitri M)
  * @version (28 February 2018)
  */
 public class Pesanan
@@ -14,6 +14,7 @@ public class Pesanan
         private String jenis_kamar;
         private boolean isDiproses;
         private boolean isSelesai;
+        private Room kamar;
     /**
      * Constructor for objects of class Pesanan
      */
@@ -46,6 +47,9 @@ public class Pesanan
     public boolean getStatusSelesai(){
         return isSelesai;
     }
+    public Room getRoom(){
+        return kamar;
+    }
     public void setBiaya(double biaya){
         this.biaya = biaya;
     }
@@ -57,6 +61,9 @@ public class Pesanan
     }
     public void setStatusSelesai(boolean diproses){
         isSelesai = diproses;
+    }
+    public void setRoom(Room kamar){
+        this.kamar = kamar;
     }
     public void printData()
     {
