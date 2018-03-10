@@ -4,14 +4,14 @@
  * cara-cara memodifikasi data Customer
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (1 Maret 2018)
+ * @version (10 Maret 2018)
  */
 public class DatabaseCustomer
 {
-    //variabel yang digunakan
+    //variabel-variabel yang digunakan
     private String[] list_customer;
     /**
-     * Constructor untuk object dari class DatabaseCustomer
+     * Constructor berisi object dari class DatabaseCustomer
      */
     public DatabaseCustomer()
     {

@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class Customer here.
+ * Class Hotel menggambarkan detail dari Customer yang akan memesan
+ * kamar Hotel
  *
- * @author (Ramdha)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (10 Maret 2018)
  */
 public class Customer
 {
@@ -39,7 +40,7 @@ public class Customer
         return nama;
     }
     /**
-     * Method untuk menentukan nama customer dalam bentuk 
+     * Method untuk menentukan ID customer dalam bentuk 
      * integer
      * 
      * @param  id customer
@@ -47,12 +48,23 @@ public class Customer
     public void setID(int id){
         this.id = id;
     }
+    /**
+     * Method untuk menentukan nama customer dalam bentuk 
+     * String
+     * 
+     * @param  nama customer
+     */
     public void setNama(String nama){
         this.nama = nama;
     }
+    /**
+     * Method untuk menampilkan detail Customer pemesan kamar hotel
+     */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("\nData Customer");
+        System.out.println("ID\t\t: " + id);
+        System.out.println("Nama\t\t: " + nama);
     }
     
 }

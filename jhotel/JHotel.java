@@ -1,33 +1,68 @@
 
 /**
- * Write a description of class JHotel here.
+ * Class JHotel berisi method main untuk memanggil tiap proses
+ * yang dapat dilakukan pada Hotel
  *
- * @author (Ramdhaidfitri M)
- * @version (8 Maret 2018)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (1- Maret 2018)
  */
 public class JHotel
 {
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * Constructor untuk object dari class JHotel
      */
     public JHotel(){
         
     }
+    /**
+     * Method untuk memanggil proses apapun terhadap Hotel
+     * 
+     * @param argumen denan tipe data String
+     */
     public static void main(String args[])
     {
-        /*
-        Customer Ramdha = new Customer(1,"Ramdha");
-        Lokasi Solo = new Lokasi(100,450, "Solo");
-        Hotel Ibis = new Hotel("Ibis", Solo, 4);
-        Pesanan Satu = new Pesanan(300000,Ramdha);
-        Ramdha.printData();
-        Ramdha.setNama("Fitri");
-        Ramdha.printData();
-        DatabaseCustomer.addCustomer(Ramdha);
-        */
+        Customer cust1 = new Customer(1,"Ramdha");
+        Lokasi lokasi1 = new Lokasi(100,450, "Jakarta");
+        Hotel hotel1 = new Hotel("Hyatt", lokasi1, 5);
+        Pesanan pesan1 = new Pesanan(700000, cust1);
+        Room kamar1 = new Room(hotel1, "2301", true, cust1, 700000,
+        StatusKamar.Booked);
+        
+        pesan1.setTipeKamar(TipeKamar.Single);
+        
+        System.out.println("Welcome to JHotel!");
+        lokasi1.printData();
+        cust1.printData();
+        hotel1.printData();
+        
+        System.out.println("===================Method 1===================="); 
+        Administrasi.pesananDitugaskan(pesan1, kamar1);
+        kamar1.printData();
+        pesan1.printData();
+        
+        System.out.println("===================Method 2====================");
+        Administrasi.pesananDibatalkan(kamar1);
+        kamar1.printData();
+        pesan1.printData();
+        Administrasi.pesananDitugaskan(pesan1, kamar1);
+        
+        System.out.println("===================Method 3====================");
+        Administrasi.pesananDibatalkan(pesan1);
+        kamar1.printData();
+        pesan1.printData();
+        Administrasi.pesananDitugaskan(pesan1, kamar1);
+        
+        System.out.println("===================Method 4====================");
+        Administrasi.pesananSelesai(kamar1);
+        kamar1.printData();
+        pesan1.printData();
+        Administrasi.pesananDitugaskan(pesan1, kamar1);
+        
+        System.out.println("===================Method 5====================");
+        Administrasi.pesananSelesai(pesan1);
+        kamar1.printData();
+        pesan1.printData();
     }
     
 }
+

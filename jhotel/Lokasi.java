@@ -3,7 +3,7 @@
  * Class Lokasi menggambarkan detail dari lokasi suatu Hotel.
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (1 Maret 2018)
+ * @version (10 Maret 2018)
  */
 public class Lokasi
 {
@@ -13,7 +13,7 @@ public class Lokasi
     private String deskripsiLokasi;
     
     /**
-     * Constructor untuk object dari class Lokasi
+     * Constructor berisi object dari class Lokasi
      */
     public Lokasi(float x_coord, float y_coord, 
     String deskripsiLokasi)
@@ -84,11 +84,14 @@ public class Lokasi
         deskripsiLokasi = deskripsi;
     }
     /**
-     * Method untuk mencetak deskripsi lokasi dari suatu 
+     * Method untuk menampilkan detail lokasi dari suatu 
      * Hotel
      */
     public void printData()
     {
-        System.out.println(deskripsiLokasi);
+        System.out.println("\nLokasi Hotel");
+        System.out.println("Koordinat x\t: " + x_coord);
+        System.out.println("Koordinat y\t: " + y_coord);
+        System.out.println("Deskripsi\t: " + deskripsiLokasi);
     }
 }

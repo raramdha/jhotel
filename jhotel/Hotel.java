@@ -4,7 +4,7 @@
  * dari nama hotel, lokasi, dan bintang.
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (1 Maret 2018)
+ * @version (10 Maret 2018)
  */
 public class Hotel
 {
@@ -78,11 +78,14 @@ public class Hotel
         this.lokasi = lokasi;
     }
     /**
-     * Method untuk mencetak nama Hotel
+     * Method untuk menampilkan detail Hotel
      */
     public void printData()
     {
-        System.out.println(nama);
+        System.out.println("\nHotel");
+        System.out.println("Nama Hotel\t: " + nama);
+        System.out.println("Lokasi\t\t: " + lokasi.getDeskripsi());
+        System.out.println("Bintang\t\t: " + bintang);
     }
 }
     

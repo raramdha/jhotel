@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=DatabasePesanan
-comment0.text=\r\n\ Class\ DatabasePesanan\ menggambarkan\ detail\ dari\r\n\ cara-cara\ memodifikasi\ data\ Pesanan\r\n\r\n\ @author\ (Ramdhaidfitri\ Martmis)\r\n\ @version\ (1\ Maret\ 2018)\r\n
+comment0.text=\r\n\ Class\ DatabasePesanan\ menggambarkan\ detail\ dari\r\n\ cara-cara\ memodifikasi\ data\ Pesanan\r\n\r\n\ @author\ (Ramdhaidfitri\ Martmis)\r\n\ @version\ (10\ Maret\ 2018)\r\n
 comment1.params=
 comment1.target=DatabasePesanan()
-comment1.text=\r\n\ Constructor\ untuk\ object\ dari\ class\ DatabasePesanan\r\n
+comment1.text=\r\n\ Constructor\ berisi\ object\ dari\ class\ DatabasePesanan\r\n
 comment2.params=baru
 comment2.target=boolean\ addPesanan(Pesanan)
 comment2.text=\r\n\ Method\ untuk\ menambahkan\ Pesanan\ baru\ ke\ dalam\r\n\ database\ Pesanan\r\n\ \r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n

@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Hotel
-comment0.text=\r\n\ Class\ Hotel\ menggambarkan\ detail\ dari\ Hotel\ yang\ terdiri\r\n\ dari\ nama\ hotel,\ lokasi,\ dan\ bintang.\r\n\r\n\ @author\ (Ramdhaidfitri\ Martmis)\r\n\ @version\ (1\ Maret\ 2018)\r\n
+comment0.text=\r\n\ Class\ Hotel\ menggambarkan\ detail\ dari\ Hotel\ yang\ terdiri\r\n\ dari\ nama\ hotel,\ lokasi,\ dan\ bintang.\r\n\r\n\ @author\ (Ramdhaidfitri\ Martmis)\r\n\ @version\ (10\ Maret\ 2018)\r\n
 comment1.params=nama\ lokasi\ bintang
 comment1.target=Hotel(java.lang.String,\ Lokasi,\ int)
 comment1.text=\r\n\ Constructor\ untuk\ object\ dari\ class\ Hotel\r\n
@@ -24,5 +24,5 @@ comment7.target=void\ setLokasi(Lokasi)
 comment7.text=\r\n\ Method\ untuk\ menentukan\ lokasi\ dari\ Hotel\r\n\r\n\ @param\ lokasi\ hotel\r\n
 comment8.params=
 comment8.target=void\ printData()
-comment8.text=\r\n\ Method\ untuk\ mencetak\ nama\ Hotel\r\n
+comment8.text=\r\n\ Method\ untuk\ menampilkan\ detail\ Hotel\r\n
 numComments=9

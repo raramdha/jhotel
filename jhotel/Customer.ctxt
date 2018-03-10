@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Customer
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Customer\ here.\r\n\r\n\ @author\ (Ramdha)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Class\ Hotel\ menggambarkan\ detail\ dari\ Customer\ yang\ akan\ memesan\r\n\ kamar\ Hotel\r\n\r\n\ @author\ (Ramdhaidfitri\ Martmis)\r\n\ @version\ (10\ Maret\ 2018)\r\n
 comment1.params=id\ nama
 comment1.target=Customer(int,\ java.lang.String)
 comment1.text=\r\n\ Constructor\ untuk\ object\ dari\ class\ Customer\r\n
@@ -12,9 +12,11 @@ comment3.target=java.lang.String\ getNama()
 comment3.text=\r\n\ Method\ untuk\ mengambil\ nama\ customer\ dalam\ bentuk\ \r\n\ integer\r\n\ \r\n\ @return\ \ nama\ customer\r\n
 comment4.params=id
 comment4.target=void\ setID(int)
-comment4.text=\r\n\ Method\ untuk\ menentukan\ nama\ customer\ dalam\ bentuk\ \r\n\ integer\r\n\ \r\n\ @param\ \ id\ customer\r\n
+comment4.text=\r\n\ Method\ untuk\ menentukan\ ID\ customer\ dalam\ bentuk\ \r\n\ integer\r\n\ \r\n\ @param\ \ id\ customer\r\n
 comment5.params=nama
 comment5.target=void\ setNama(java.lang.String)
+comment5.text=\r\n\ Method\ untuk\ menentukan\ nama\ customer\ dalam\ bentuk\ \r\n\ String\r\n\ \r\n\ @param\ \ nama\ customer\r\n
 comment6.params=
 comment6.target=void\ printData()
+comment6.text=\r\n\ Method\ untuk\ menampilkan\ detail\ Customer\ pemesan\ kamar\ hotel\r\n
 numComments=7

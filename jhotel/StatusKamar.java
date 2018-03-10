@@ -1,9 +1,10 @@
 
 /**
- * Enumeration class Statuskamar - write a description of the enum class here
+ * Enumeration class StatusKamar berisi status kamar yang 
+ * tersedia di Hotel
  *
- * @author (Ramdhaidfitri M)
- * @version (8 Maret 2018)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (10 Maret 2018)
  */
 public enum StatusKamar
 {

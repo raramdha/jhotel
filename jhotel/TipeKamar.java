@@ -1,22 +1,23 @@
 
 /**
- * Enumeration class TipeKamar - write a description of the enum class here
+ * Enumeration class TipeKamar berisi tipe-tipe kamar yang
+ * tersedia di Hotel
  *
- * @author (Ramdhaidfitri M)
- * @version (8 Maret 2018)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (10 Maret 2018)
  */
 public enum TipeKamar
 {
     Single("Single"), Double("Double"),Premium("Premium");
     
-    private String tipe;
+    private String tipe_kamar;
     
-    TipeKamar(String tipe){
-        this.tipe = tipe;
+    TipeKamar(String tipe_kamar){
+        this.tipe_kamar = tipe_kamar;
     }
     
-    public String tipe(){
-        return tipe;
+    public String toString(){
+        return tipe_kamar;
   
     }
 }

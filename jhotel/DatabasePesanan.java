@@ -4,14 +4,14 @@
  * cara-cara memodifikasi data Pesanan
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (1 Maret 2018)
+ * @version (10 Maret 2018)
  */
 public class DatabasePesanan
 {
-    //variabel yang digunakan
+    //variabel-variabel yang digunakan
     private String[] list_pesanan;
     /**
-     * Constructor untuk object dari class DatabasePesanan
+     * Constructor berisi object dari class DatabasePesanan
      */
     public DatabasePesanan()
     {
