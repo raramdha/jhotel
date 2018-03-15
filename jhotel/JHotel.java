@@ -21,48 +21,48 @@ public class JHotel
      */
     public static void main(String args[])
     {
-        Customer cust1 = new Customer(1,"Ramdha");
         Lokasi lokasi1 = new Lokasi(100,450, "Jakarta");
         Hotel hotel1 = new Hotel("Hyatt", lokasi1, 5);
-        Pesanan pesan1 = new Pesanan(700000, cust1);
-        Room kamar1 = new Room(hotel1, "2301", true, cust1, 700000,
+        Room sroom1 = new SingleRoom(hotel1, "2301", true, 
         StatusKamar.Booked);
+        Customer cust1 = new Customer(1,"Ramdha");
+        Pesanan pesan1 = new Pesanan(3, cust1, sroom1);
         
-        pesan1.setTipeKamar(TipeKamar.Single);
+        sroom1.setDailyTariff(700000);
+        pesan1.setBiaya();
         
         System.out.println("Welcome to JHotel!");
         lokasi1.printData();
         cust1.printData();
         hotel1.printData();
         
-        System.out.println("===================Method 1===================="); 
-        Administrasi.pesananDitugaskan(pesan1, kamar1);
-        kamar1.printData();
+        System.out.println("\n============Melakukan pesanan Single Room============"); 
+        Administrasi.pesananDitugaskan(pesan1, sroom1);
+        sroom1.printData();
         pesan1.printData();
         
-        System.out.println("===================Method 2====================");
-        Administrasi.pesananDibatalkan(kamar1);
-        kamar1.printData();
-        pesan1.printData();
-        Administrasi.pesananDitugaskan(pesan1, kamar1);
         
-        System.out.println("===================Method 3====================");
-        Administrasi.pesananDibatalkan(pesan1);
-        kamar1.printData();
-        pesan1.printData();
-        Administrasi.pesananDitugaskan(pesan1, kamar1);
+        if(sroom1 instanceof DoubleRoom){
+            System.out.println("Benar Double Room"); }
+        else {
+            System.out.println("Salah, bukan Double Room"); }
         
-        System.out.println("===================Method 4====================");
-        Administrasi.pesananSelesai(kamar1);
-        kamar1.printData();
-        pesan1.printData();
-        Administrasi.pesananDitugaskan(pesan1, kamar1);
+        Room droom1 = new DoubleRoom(hotel1, "2398", true, 
+        StatusKamar.Booked);
+        Pesanan pesan2 = new Pesanan(5, cust1, droom1);
+        droom1.setDailyTariff(900000);
+        pesan2.setBiaya();
         
-        System.out.println("===================Method 5====================");
-        Administrasi.pesananSelesai(pesan1);
-        kamar1.printData();
-        pesan1.printData();
+        System.out.println("\n============Melakukan pesanan Double Room============"); 
+        Administrasi.pesananDitugaskan(pesan2, droom1);
+        droom1.printData();
+        pesan2.printData();
+        
+        if(droom1 instanceof DoubleRoom){
+            System.out.println("Benar Double Room"); }
+        else {
+            System.out.println("Salah, bukan Double Room"); }
+        
     }
-    
 }
 
