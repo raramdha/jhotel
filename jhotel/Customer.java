@@ -25,8 +25,8 @@ public class Customer
     {
         this.id = id;
         this.nama = nama;
-        //GregorianCalendar calendar = new GregorianCalendar(
-        //tahun,bulan,tanggal);
+        GregorianCalendar calendar = new GregorianCalendar(
+        tahun,bulan,tanggal);
     }
     public Customer(int id, String nama, Date dob){
         this.id = id;
@@ -49,15 +49,14 @@ public class Customer
      * 
      * @return  nama customer
      */
-    public String getNama(){
+    public static String getNama(){
         return nama;
     }
     public String getEmail(){
         return email;
     }
     public Date getDOB(){
-        dob = new Date();
-        System.out.println(dob);
+        System.out.printf(dob.toString());
         return dob;
     }
     /**
@@ -89,17 +88,17 @@ public class Customer
     public void setDOB(Date dob){
         this.dob = dob;
     }
-    public String toString(){
-        return null;
-    }
     /**
      * Method untuk menampilkan detail Customer pemesan kamar hotel
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println("\nData Customer");
-        System.out.println("ID\t\t: " + id);
-        System.out.println("Nama\t\t: " + nama);
+        if(DatabasePesanan.getPesanan() == null){
+            return ("Customer ID: "+id +"\nName: "+nama+
+            "\nE-mail: "+email+ "\nDate of Birth: "+dob);
+        }
+        
+        
     }
     
 }

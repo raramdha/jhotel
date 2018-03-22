@@ -6,6 +6,7 @@
  * @version (10 Maret 2018)
  */
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class Pesanan
 {
@@ -21,7 +22,17 @@ public class Pesanan
      * Constructor berisi object pada class Pesanan
      */
     public Pesanan(double jumlahHari, Customer pelanggan,
-    Room kamar)
+    Room kamar, int hari, int bulan, int tahun)
+    {
+        // initialise instance variables
+        this.jumlahHari = jumlahHari;
+        this.pelanggan = pelanggan;
+        this.kamar = kamar;
+        GregorianCalendar calendar = new GregorianCalendar(
+        tahun,bulan,hari);
+    }
+    public Pesanan(double jumlahHari, Customer pelanggan,
+    Room kamar, Date tanggalPesan)
     {
         // initialise instance variables
         this.jumlahHari = jumlahHari;
@@ -47,6 +58,7 @@ public class Pesanan
         return kamar;
     }
     public Date getTanggalPesan(){
+        System.out.println(tanggalPesan.toString());
         return tanggalPesan;
     }
     public void setBiaya(){
@@ -76,9 +88,20 @@ public class Pesanan
     /**
      * Method untuk menampilkan detail pesanan kamar hotel
      */
-    public void printData()
+    public String toString()
     {
-       System.out.println("\nDetail Pesanan");
+       String final_status = "KOSONG";
+        if(getStatusDiproses() == true && getStatusSelesai() == false){
+           final_status = "DIPROSES";
+        }
+        else if (getStatusDiproses() == false && getStatusSelesai() == false){
+            final_status = "KOSONG";
+        }
+        else if(getStatusDiproses() == false && getStatusSelesai() == true){
+            final_status = "SELESAI";
+        }
+        return ("
+        System.out.println("\nDetail Pesanan");
        System.out.println("Nama Pelanggan\t: " + pelanggan.getNama());
        System.out.println("Jumlah Hari\t: " + jumlahHari);
        System.out.println("Biaya\t\t: " + biaya);

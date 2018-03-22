@@ -105,20 +105,22 @@ public abstract class Room
     public void setPesanan(Pesanan pesan){
         this.pesan=pesan;
     }
-    public String toString(){
-        return null;
-    }
     /**
      * Method untuk menampilkan detail kamar Hotel
      */
-    public void printData(){
-        System.out.println("Kamar Hotel");
-        System.out.println("Nama Hotel\t: " + hotel.getNama());
-        System.out.println("Nomor Kamar\t: " + nomor_kamar);
-        System.out.println("Status\t\t: " + isAvailable);
-        System.out.println("Tipe Kamar\t: " + getTipeKamar());
-        System.out.println("Harga\t\t: " + dailyTariff);
-        System.out.println("Status Kamar\t: " + status_kamar);
+    public String toString(){
+        if(getStatusAvailable() == true){
+            return ("Nama Hotel\t: " + hotel.getNama()+ 
+            "\nTipe Kamar\t: "+getTipeKamar()+ "\nHarga: "+dailyTariff+
+            "\nStatus Kamar: "+status_kamar);
+        }
+        else{
+           return ("Nama Hotel\t: " + hotel.getNama()+ 
+            "\nTipe Kamar\t: "+getTipeKamar()+ "\nHarga: "+dailyTariff+
+            "\nStatus Kamar: "+status_kamar+ "\nPelanggan: "
+            +pesan.getPelanggan(Customer.getNama()));
+        }
+        
         
     }
 }
