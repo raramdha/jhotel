@@ -23,6 +23,6 @@ comment7.params=lokasi
 comment7.target=void\ setLokasi(Lokasi)
 comment7.text=\r\n\ Method\ untuk\ menentukan\ lokasi\ dari\ Hotel\r\n\r\n\ @param\ lokasi\ hotel\r\n
 comment8.params=
-comment8.target=void\ printData()
+comment8.target=java.lang.String\ toString()
 comment8.text=\r\n\ Method\ untuk\ menampilkan\ detail\ Hotel\r\n
 numComments=9

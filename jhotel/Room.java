@@ -105,6 +105,9 @@ public abstract class Room
     public void setPesanan(Pesanan pesan){
         this.pesan=pesan;
     }
+    public String toString(){
+        return null;
+    }
     /**
      * Method untuk menampilkan detail kamar Hotel
      */

@@ -83,6 +83,9 @@ public class Lokasi
     {
         deskripsiLokasi = deskripsi;
     }
+    public String toString(){
+        return null;
+    }
     /**
      * Method untuk menampilkan detail lokasi dari suatu 
      * Hotel

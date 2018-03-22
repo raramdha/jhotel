@@ -5,6 +5,8 @@
  * @author (Ramdhaidfitri Martmis)
  * @version (10 Maret 2018)
  */
+import java.util.Date;
+
 public class Pesanan
 {
     // variabel-variabel yang digunakan
@@ -14,6 +16,7 @@ public class Pesanan
         private boolean isDiproses;
         private boolean isSelesai;
         private Room kamar;
+        private Date tanggalPesan;
     /**
      * Constructor berisi object pada class Pesanan
      */
@@ -43,6 +46,9 @@ public class Pesanan
     public Room getRoom(){
         return kamar;
     }
+    public Date getTanggalPesan(){
+        return tanggalPesan;
+    }
     public void setBiaya(){
         biaya = kamar.getDailyTariff() * jumlahHari;
     }
@@ -60,6 +66,12 @@ public class Pesanan
     }
     public void setRoom(Room kamar){
         this.kamar = kamar;
+    }
+    public void setTanggalPesan(Date tanggalPesan){
+        this.tanggalPesan = tanggalPesan;
+    }
+    public String toString(){
+        return null;
     }
     /**
      * Method untuk menampilkan detail pesanan kamar hotel

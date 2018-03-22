@@ -9,7 +9,7 @@
 public class DatabasePesanan
 {
     //variabel-variabel yang digunakan
-    private String[] list_pesanan;
+    private Pesanan list_pesanan;
     /**
      * Constructor berisi object dari class DatabasePesanan
      */

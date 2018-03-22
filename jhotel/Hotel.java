@@ -77,15 +77,15 @@ public class Hotel
     {
         this.lokasi = lokasi;
     }
+    
     /**
      * Method untuk menampilkan detail Hotel
      */
-    public void printData()
+    public String toString()
     {
-        System.out.println("\nHotel");
-        System.out.println("Nama Hotel\t: " + nama);
-        System.out.println("Lokasi\t\t: " + lokasi.getDeskripsi());
-        System.out.println("Bintang\t\t: " + bintang);
+        return("Nama Hotel\t: " + nama+"\nLokasi\t\t: " + lokasi.getDeskripsi()+
+        "\nBintang\t\t: " + bintang);
+        
     }
 }
     

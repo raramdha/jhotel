@@ -10,14 +10,14 @@ public enum TipeKamar
 {
     Single("Single"), Double("Double"),Premium("Premium");
     
-    private String tipe_kamar;
+    private String deskripsi;
     
-    TipeKamar(String tipe_kamar){
-        this.tipe_kamar = tipe_kamar;
+    TipeKamar(String deskripsi){
+        this.deskripsi = deskripsi;
     }
     
     public String toString(){
-        return tipe_kamar;
+        return deskripsi;
   
     }
 }
