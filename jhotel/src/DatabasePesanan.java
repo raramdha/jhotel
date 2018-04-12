@@ -55,7 +55,7 @@ public class DatabasePesanan
             if (pesan.getPelanggan() == pelanggan) {
                 return pesan;
             }
-             }
+        }
         return null;
 
     }
@@ -65,10 +65,8 @@ public class DatabasePesanan
             if (pesan.getID() == id) {
                 return pesan;
             }
-            else {
-                return null;
-            }
         }
+        return null;
     }
     public static Pesanan getPesanan(Room kamar)
     {
@@ -76,10 +74,8 @@ public class DatabasePesanan
             if (pesan.getRoom() == kamar) {
                 return pesan;
             }
-            else {
-                return null;
-            }
         }
+        return null;
     }
     /**
      * Method untuk mengambil isi database Pesanan
@@ -93,14 +89,8 @@ public class DatabasePesanan
     public static int getLastPesananID(){
         return LAST_PESANAN_ID;
     }
-    /**
-     * Method untuk membatalkan pesanan
-     * 
-     */
-    public static Pesanan getPesananAktif(Customer pelanggan)
-    {
-        return null;
-    }
+
+
 
 
 }
