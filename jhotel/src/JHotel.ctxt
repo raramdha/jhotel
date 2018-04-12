@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=JHotel
+comment1.params=
+comment1.target=JHotel()
+comment1.text=\r\n\ Constructor\ untuk\ object\ dari\ class\ JHotel\r\n
+comment2.params=args
+comment2.target=void\ main(java.lang.String[])
+comment2.text=\r\n\ Method\ untuk\ memanggil\ proses\ apapun\ terhadap\ Hotel\r\n\ \r\n\ @param\ argumen\ denan\ tipe\ data\ String\r\n
+numComments=3
