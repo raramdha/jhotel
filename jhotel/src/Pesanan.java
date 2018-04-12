@@ -29,7 +29,8 @@ public class Pesanan
         isAktif = true;
         this.jumlahHari = jumlahHari;
         this.pelanggan = pelanggan;
-        tanggalPesan = new Date();
+        this.biaya = jumlahHari * getRoom().getDailyTariff();
+        this.tanggalPesan = new Date();
     }
     public int getID(){ return id; }
     public double getBiaya(){

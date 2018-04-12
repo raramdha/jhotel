@@ -43,8 +43,25 @@ public class DatabasePesanan
      */
     public static boolean removePesanan(Pesanan pesan)
     {
+        for (Pesanan pesandb : PESANAN_DATABASE) {
+            if (pesandb == pesan) {
+                if (pesan.getRoom() != null) {
+                    pesan.setStatusAktif(false);
+                    PESANAN_DATABASE.remove(pesandb);
+                    return true;
+                }
+                else if (pesan.getRoom() == null) {
+                    if(pesan.getStatusAktif() == true){
+                        pesan.setStatusAktif(false);
+                        PESANAN_DATABASE.remove(pesandb);
+                        return true;
+                    }
+                }
+            }
+        }
         return false;
     }
+
     /**
      * Method untuk mengambil data Pesanan dari database
      * 
