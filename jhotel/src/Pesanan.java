@@ -31,6 +31,7 @@ public class Pesanan
         this.pelanggan = pelanggan;
         this.biaya = jumlahHari * getRoom().getDailyTariff();
         this.tanggalPesan = new Date();
+        this.id = DatabasePesanan.getLastPesananID() + 1;
     }
     public int getID(){ return id; }
     public double getBiaya(){

@@ -15,9 +15,9 @@ public class DoubleRoom extends Room
      * Constructor for objects of class DoubleRoom
      */
     public DoubleRoom(Hotel hotel, String nomor_kamar, 
-    boolean isAvailable,StatusKamar status_kamar)
+    StatusKamar status_kamar)
     {
-        super(hotel,nomor_kamar,isAvailable,status_kamar);
+        super(hotel,nomor_kamar,status_kamar);
         
     }
 

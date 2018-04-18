@@ -1,53 +1,95 @@
-
 /**
- * Write a description of class DatabaseHotel here.
+ * Class DatabaseHotel menggambarkan detail cara-cara
+ * memodifikasi data Hotel
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (10 Maret 2018)
  */
-public class DatabaseHotel
-{
-    private String[] list_hotel;
+
+import java.util.ArrayList;
+
+public class DatabaseHotel {
+    private static ArrayList<Hotel> HOTEL_DATABASE = new ArrayList<>();
+    private static int LAST_HOTEL_ID = 0;
 
     /**
      * Constructor for objects of class DatabaseHotel
      */
-    public DatabaseHotel()
-    {
+    public DatabaseHotel() {
         // initialise instance variables
+    }
+
+    /**
+     * Method getHotelDatabase untuk mengambil keseluruhan
+     * data hotel yang akan disimpan dalam Database
+     *
+     * @return default dari tipe data String
+     */
+    public static ArrayList<Hotel> getHotelDatabase() {
+        return HOTEL_DATABASE;
+    }
+
+    /**
+     * Method getLastHotelID untuk mengambil ID
+     * hotel yang terakhir disimpan dalam Database
+     *
+     * @return LAST_HOTEL_ID
+     */
+    public static int getLastHotelID() {
+        return LAST_HOTEL_ID;
     }
 
     /**
      * Method addHotel untuk menambahkan data hotel baru ke
      * dalam Database
      *
-     * @param  detail Hotel baru yang akan ditambahkan
-     * @return  default dari tipe data boolean
+     * @param baru (hotel yang akan ditambahkan)
+     * @return default dari tipe data boolean
      */
-    public boolean addHotel(Hotel baru)
-    {
-        return false;
+    public static boolean addHotel(Hotel baru) {
+        for (Hotel hotel :
+                HOTEL_DATABASE) {
+            if (hotel.getID() == baru.getID()) return false;
+        }
+        HOTEL_DATABASE.add(baru);
+        LAST_HOTEL_ID = baru.getID();
+        return true;
     }
+
+    /**
+     * Method getHotel untuk mengambil data hotel
+     *
+     * @param id hotel
+     * @return default dari tipe Hotel
+     */
+    public static Hotel getHotel(int id) {
+        for (Hotel hotel :
+                HOTEL_DATABASE) {
+            if (hotel.getID() == id) return hotel;
+        }
+        return null;
+    }
+
     /**
      * Method removeHotel untuk menghapus data hotel yang ada
      * dalam Database
      *
-     * @param  ID Hotel yang akan dihapus
-     * @return  default dari tipe data boolean
+     * @param id hotel yang akan dihapus
+     * @return default dari tipe data boolean
      */
-    public boolean removeHotel(int id)
-    {
+    public static boolean removeHotel(int id) {
+        for (Hotel hotel : HOTEL_DATABASE) {
+            if (hotel.getID() == id) {
+                for (Room kamar :
+                        DatabaseRoom.getRoomsFromHotel(hotel)) {
+                    DatabaseRoom.removeRoom(hotel, kamar.getNomorKamar());
+                }
+                HOTEL_DATABASE.remove(hotel);
+                return true;
+            }
+        }
         return false;
     }
-    /**
-     * Method getHotelDatabase untuk mengambil keseluruhan
-     * data hotel yang akan disimpan dalam Database
-     *
-     * @param  s
-     * @return  default dari tipe data String
-     */
-    public String[] getHotelDatabase()
-    {
-        return null;
-    }
 }
+
+

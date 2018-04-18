@@ -1,4 +1,3 @@
-
 /**
  * Class Hotel menggambarkan detail dari Customer yang akan memesan
  * kamar Hotel
@@ -18,17 +17,20 @@ public class Customer
     protected String nama;
     protected String email;
     protected Date dob;
+
+    SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
     /**
      * Constructor untuk object dari class Customer
      */
-    public Customer(int id, String nama, int year, int month, int date)
+    public Customer(String nama, int year, int month, int date)
     {
-        this.id = id;
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
-        this.dob=new GregorianCalendar(year,month,date).getTime();
+        this.dob=new GregorianCalendar(year,month-1,date).getTime();
     }
-    public Customer(int id, String nama, Date dob){
-        this.id = id;
+
+    public Customer(String nama, Date dob){
+        this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
     }
@@ -52,14 +54,26 @@ public class Customer
     public String getNama(){
         return nama;
     }
+
+    /**
+     * Method untuk mengambil email customer
+     *
+     * @return  nama customer
+     */
     public String getEmail(){
         return email;
     }
+
+    /**
+     * Method untuk mengambil tanggal lahir customer
+     *
+     * @return  dob customer
+     */
     public Date getDOB(){
-       SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
        System.out.println("DOB: " + dateFormat.format(dob));
        return dob;
     }
+
     /**
      * Method untuk menentukan ID customer dalam bentuk 
      * integer
@@ -94,25 +108,35 @@ public class Customer
         
         this.email = email;
     }
+
+    /**
+     * Method untuk menentukan tanggal lahir customer
+     *
+     * @param  dob customer
+     */
     public void setDOB(Date dob){
         this.dob = dob;
     }
+
     /**
      * Method untuk menampilkan detail Customer pemesan kamar hotel
      */
     public String toString()
     {
-        if(DatabasePesanan.getPesanan(this) == null){
-            System.out.println("Customer ID: "+id +"\nName: "+nama+
-            "\nE-mail: "+email+ "\nDate of Birth: "+getDOB());
-            return null;
+        if(DatabasePesanan.getPesananAktif(this)==null)
+        {
+            return "\nCustomer ID \t:" + getID()
+                    + "\nName \t\t:" + getNama()
+                    + "\nE-Mail \t\t:" + getEmail()
+                    + "\nDate of Birth \t:" + dateFormat.format(getDOB());
         }
-        else {
-            System.out.println("Customer ID: "+id +"\nName: "+nama+
-            "\nE-mail: "+email+ "\nDate of Birth: "+getDOB() + 
-            "Booking order is in progress");
-            return null;
-        
+        else
+        {
+            return "\nCustomer ID \t:" + getID()
+                    + "\nName \t\t:" + getNama()
+                    + "\nE-Mail \t\t:" + getEmail()
+                    + "\nDate of Birth \t:" + dateFormat.format(getDOB())
+                    + "\nBooking Order is in progress";
         }
     
     }

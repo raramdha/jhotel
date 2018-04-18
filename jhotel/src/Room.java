@@ -21,7 +21,7 @@ public abstract class Room
     {
         this.hotel = hotel;
         this.nomor_kamar = nomor_kamar;
-        this.status_kamar =status_kamar;
+        this.status_kamar = status_kamar;
     }
 
     /**
@@ -31,7 +31,6 @@ public abstract class Room
      */
     public Hotel getHotel()
     {
-        // put your code here
         return hotel;
     }
     /**
@@ -79,6 +78,20 @@ public abstract class Room
      * Method untuk menampilkan detail kamar Hotel
      */
     public String toString(){
-        return null;
+        if(DatabasePesanan.getPesanan(this) == null)
+        {
+            return "\nNama Hotel \t\t:" + getHotel().getNama()
+                    + "\nTipe Kamar \t\t:" + getTipeKamar()
+                    + "\nHarga \t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString();
+        }
+        else
+        {
+            return "\nNama Hotel \t\t:" + getHotel().getNama()
+                    + "\nTipe Kamar \t\t:" + getTipeKamar()
+                    + "\nHarga \t\t:" + getDailyTariff()
+                    + "\nStatus Kamar \t\t:" + getStatusKamar().toString()
+                    + "Pelanggan \t\t:" + DatabasePesanan.getPesanan(this).getPelanggan().getNama();
+        }
     }
 }

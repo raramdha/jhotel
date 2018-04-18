@@ -23,8 +23,6 @@ public class JHotel
      */
     public static void main(String args[])
     {
-        Customer cust1 = new Customer(1, "Ramdha", new 
-        GregorianCalendar(2018,03,20).getTime());
         
         
     }
