@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=DatabaseRoom
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ DatabaseRoom\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=DatabaseRoom()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DatabaseRoom\r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getRoomDatabase()
+comment2.text=\r\n\ Method\ getRoomDatabase\ untuk\ mengambil\ keseluruhan\r\n\ data\ Room\ yang\ akan\ disimpan\ dalam\ Database\r\n\r\n\ @return\ \ default\ dari\ tipe\ data\ String\r\n
+comment3.params=baru
+comment3.target=boolean\ addRoom(Room)
+comment3.text=\r\n\ Method\ addRoom\ untuk\ menambahkan\ data\ Room\ baru\ ke\r\n\ dalam\ Database\r\n\r\n\ @param\ \ baru\ (kamar\ yang\ akan\ ditambahkan)\r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
+comment4.params=hotel\ nomor_kamar
+comment4.target=Room\ getRoom(Hotel,\ java.lang.String)
+comment5.params=hotel
+comment5.target=java.util.ArrayList\ getRoomsFromHotel(Hotel)
+comment6.params=
+comment6.target=java.util.ArrayList\ getVacantRooms()
+comment7.params=hotel\ nomor_kamar
+comment7.target=boolean\ removeRoom(Hotel,\ java.lang.String)
+comment7.text=\r\n\ Method\ removeRoom\ untuk\ menghapus\ data\ Room\ yang\ ada\r\n\ dalam\ Database\r\n\r\n\ @param\ \ \ hotel\ dan\ nomor\ kamar\ yang\ akan\ dihapus\r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
+numComments=8

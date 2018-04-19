@@ -45,15 +45,19 @@ public class DatabaseCustomer
      * @param baru (customer baru)
      * @return  default dari tipe data boolean
      */
-    public static boolean addCustomer(Customer baru)
-    {
-        for (Customer cust : CUSTOMER_DATABASE) {
-            if(cust.getID() == baru.getID()) return false;
+    public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException {
+        for (Customer cust :
+                CUSTOMER_DATABASE) {
+            if(cust.getID() == baru.getID() || cust.getEmail().compareTo(baru.getEmail()) == 0){
+                throw new PelangganSudahAdaException(baru);
+            }
         }
         CUSTOMER_DATABASE.add(baru);
         LAST_CUSTOMER_ID = baru.getID();
         return true;
     }
+
+
     /**
      * Method untuk mengambil Customer dari database
      * menggunakan id customer
@@ -61,8 +65,7 @@ public class DatabaseCustomer
      * @return  default dari tipe data boolean
      */
     public static Customer getCustomer(int id){
-        for (Customer cust :
-                CUSTOMER_DATABASE) {
+        for (Customer cust : CUSTOMER_DATABASE) {
             if (cust.getID() == id) return cust;
         }
         return null;
@@ -73,18 +76,26 @@ public class DatabaseCustomer
      * @param id customer
      * @return  default dari tipe data boolean
      */
-    public boolean removeCustomer(int id)
-    {
-        for (Customer cust : CUSTOMER_DATABASE) {
-        if(cust.getID()==id){
-            for (Pesanan pesan :
-                    DatabasePesanan.getPesananDatabase()) {
-                if(pesan.getPelanggan().equals(cust)) DatabasePesanan.removePesanan(pesan);
-            }
-            CUSTOMER_DATABASE.remove(cust);
-            return true;
+    public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException {
+        for (Customer cust :
+                CUSTOMER_DATABASE) {
+            if(cust.getID()==id){
+                for (Pesanan pesan :
+                        DatabasePesanan.getPesananDatabase()) {
+                    if(pesan.getPelanggan().equals(cust)) {
+                        try{
+                            DatabasePesanan.removePesanan(pesan);
+                        }
+                        catch(PesananTidakDitemukanException e){
+
+                        }
+                    }
+                }
+                CUSTOMER_DATABASE.remove(cust);
+                return true;
             }
         }
-        return false;
+        throw new PelangganTidakDitemukanException(id);
     }
+
 }

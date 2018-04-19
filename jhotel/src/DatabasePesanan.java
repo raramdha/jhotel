@@ -9,7 +9,7 @@ import java.util.*;
 public class DatabasePesanan
 {
     //variabel-variabel yang digunakan
-    private static ArrayList<Pesanan> PESANAN_DATABASE;
+    private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>();
     private static int LAST_PESANAN_ID;
     /**
      * Constructor berisi object dari class DatabasePesanan
@@ -25,23 +25,34 @@ public class DatabasePesanan
      * 
      * @return  default dari tipe data boolean
      */
-    public static boolean addPesanan(Pesanan baru)
+    public static boolean addPesanan(Pesanan baru) throws PesananSudahAdaException
     {
-        if(baru.getStatusAktif() == true){
-            return false;
-        }
-        else {
+        if(PESANAN_DATABASE.size() == 0){
+            baru.setID(LAST_PESANAN_ID+1);
+            LAST_PESANAN_ID++;
             PESANAN_DATABASE.add(baru);
             return true;
         }
+        else {
+            for (Pesanan lama : PESANAN_DATABASE) {
+                if (lama.getPelanggan().equals(baru.getPelanggan()) && lama.getStatusAktif()) {
+                    throw new PesananSudahAdaException(baru);
+                }
+                PESANAN_DATABASE.add(baru);
+                LAST_PESANAN_ID = baru.getID();
+                return true;
+            }
+        }
+        throw new PesananSudahAdaException(baru);
     }
+
     /**
      * Method untuk menghapus Pesanan dari
      * database Pesanan
      * 
      * @return  default dari tipe data boolean
      */
-    public static boolean removePesanan(Pesanan pesan)
+    public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException
     {
         for (Pesanan pesandb : PESANAN_DATABASE) {
             if (pesandb == pesan) {
@@ -59,7 +70,7 @@ public class DatabasePesanan
                 }
             }
         }
-        return false;
+        throw new PesananTidakDitemukanException(pesan.getPelanggan());
     }
 
     /**

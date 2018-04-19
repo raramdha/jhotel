@@ -22,17 +22,19 @@ public class Customer
     /**
      * Constructor untuk object dari class Customer
      */
-    public Customer(String nama, int year, int month, int date)
+    public Customer(String nama, int tahun, int bulan, int tanggal, String email)
     {
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
-        this.dob=new GregorianCalendar(year,month-1,date).getTime();
+        this.dob=new GregorianCalendar(tahun,bulan-1,tanggal).getTime();
+        this.email = email;
     }
 
-    public Customer(String nama, Date dob){
+    public Customer(String nama, Date dob, String email){
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
+        this.email = email;
     }
     /**
      * Method untuk mengambil id Customer dalam bentuk 
@@ -70,7 +72,6 @@ public class Customer
      * @return  dob customer
      */
     public Date getDOB(){
-       System.out.println("DOB: " + dateFormat.format(dob));
        return dob;
     }
 

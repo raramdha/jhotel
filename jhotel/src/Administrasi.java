@@ -27,7 +27,7 @@ public class Administrasi
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(true);
         pesan.setRoom(kamar);
-        DatabaseRoom.getRoom(kamar.getHotel(),kamar.getNomorKamar()).setStatusKamar(StatusKamar.Booked);
+        kamar.setStatusKamar(StatusKamar.Booked);
     }
     /**
      * Method untuk memproses kamar Hotel yang batal dipesan

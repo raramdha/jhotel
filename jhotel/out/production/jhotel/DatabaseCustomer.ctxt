@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=DatabaseCustomer
+comment1.params=
+comment1.target=DatabaseCustomer()
+comment1.text=\r\n\ Constructor\ berisi\ object\ dari\ class\ DatabaseCustomer\r\n
+comment2.params=
+comment2.target=java.util.ArrayList\ getCustomerDatabase()
+comment2.text=\r\n\ Method\ untuk\ mengambil\ database\ customer\r\n\r\n\ @return\ \ CUSTOMER_DATABASE\r\n
+comment3.params=
+comment3.target=int\ getLastCustomerID()
+comment3.text=\r\n\ Method\ untuk\ mengambil\ id\ customer\ yang\ terakhir\ diinput\r\n\r\n\ @return\ \ LAST_CUSTOMER_ID\r\n
+comment4.params=baru
+comment4.target=boolean\ addCustomer(Customer)
+comment4.text=\r\n\ Method\ untuk\ menambahkan\ Customer\ baru\ ke\ dalam\r\n\ database\r\n\ @param\ baru\ (customer\ baru)\r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
+comment5.params=id
+comment5.target=Customer\ getCustomer(int)
+comment5.text=\r\n\ Method\ untuk\ mengambil\ Customer\ dari\ database\r\n\ menggunakan\ id\ customer\r\n\ @param\ id\ customer\r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
+comment6.params=id
+comment6.target=boolean\ removeCustomer(int)
+comment6.text=\r\n\ Method\ untuk\ menghapus\ Customer\ dari\ database\ \r\n\ menggunakan\ id\ customer\r\n\ @param\ id\ customer\r\n\ @return\ \ default\ dari\ tipe\ data\ boolean\r\n
+numComments=7
