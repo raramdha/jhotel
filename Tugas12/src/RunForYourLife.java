@@ -71,6 +71,7 @@ public class RunForYourLife implements Runnable {
             catch(InterruptedException ex){
                 System.out.println(threadName + " was interrupted.");
             }
+
         }
         System.out.println(threadName + " has finished!");
     }
