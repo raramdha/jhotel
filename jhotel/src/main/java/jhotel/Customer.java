@@ -14,28 +14,31 @@ import java.util.regex.*;
 public class Customer
 {
     //variabel-variabel yang digunakan
-    protected int id;
-    protected String nama;
-    protected String email;
-    protected Date dob;
+    private int id;
+    private String nama;
+    private String email;
+    private Date dob;
+    private String password;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
     /**
      * Constructor untuk object dari class Customer
      */
-    public Customer(String nama, int tanggal, int bulan, int tahun, String email)
+    public Customer(String nama, int tanggal, int bulan, int tahun, String email, String password)
     {
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob=new GregorianCalendar(tanggal,bulan-1,tahun).getTime();
         this.email = email;
+        this.password = password;
     }
 
-    public Customer(String nama, Date dob, String email){
+    public Customer(String nama, Date dob, String email, String password){
         this.id = DatabaseCustomer.getLastCustomerID() + 1;
         this.nama = nama;
         this.dob = dob;
         this.email = email;
+        this.password = password;
     }
     /**
      * Method untuk mengambil id Customer dalam bentuk 
@@ -77,6 +80,15 @@ public class Customer
     }
 
     /**
+     * Method untuk mengambil password customer
+     *
+     * @return  password
+     */
+    public String getPassword(){
+        return password;
+    }
+
+    /**
      * Method untuk menentukan ID customer dalam bentuk 
      * integer
      * 
@@ -95,7 +107,17 @@ public class Customer
     public void setNama(String nama){
         this.nama = nama;
     }
-    
+
+    /**
+     * Method untuk menentukan password customer dalam bentuk
+     * String
+     *
+     * @param  password customer
+     */
+    public void setPassword(String password){
+        this.password = password;
+    }
+
     /**
      * Method untuk menentukan email customer dalam bentuk 
      * String

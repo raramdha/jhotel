@@ -78,7 +78,7 @@ public abstract class Room
      * Method untuk menampilkan detail kamar Hotel
      */
     public String toString(){
-        if(DatabasePesanan.getPesanan(this) == null)
+        if(DatabasePesanan.getPesananAktif(this) == null)
         {
             return "\nHotel: " + getHotel().getNama()
                     + ", TipeKamar: " + getTipeKamar()
@@ -91,7 +91,7 @@ public abstract class Room
                     + ", TipeKamar: " + getTipeKamar()
                     + ", Harga: " + getDailyTariff()
                     + ", Status Kamar: " + getStatusKamar().toString()
-                    + ", Pelanggan: " + DatabasePesanan.getPesanan(this).getPelanggan().getNama() + "\n";
+                    + ", Pelanggan: " + DatabasePesanan.getPesananAktif(this).getPelanggan().getNama() + "\n";
         }
     }
 }

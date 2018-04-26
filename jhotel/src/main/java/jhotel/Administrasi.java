@@ -26,22 +26,28 @@ public class Administrasi
      */
     public static void pesananDitugaskan(Pesanan pesan, Room kamar)
     {
-        pesan.setStatusSelesai(false);
-        pesan.setStatusDiproses(true);
-        pesan.setRoom(kamar);
-        kamar.setStatusKamar(StatusKamar.Booked);
+
+        if(kamar.getStatusKamar().equals(StatusKamar.Vacant)){
+            pesan.setStatusSelesai(false);
+            pesan.setStatusDiproses(true);
+            pesan.setRoom(kamar);
+            kamar.setStatusKamar(StatusKamar.Booked);
+        }
+        else{
+            pesan.setStatusAktif(false);
+        }
     }
+
     /**
      * Method untuk memproses kamar Hotel yang batal dipesan
      *
      * @param  kamar yang akan dipesan
      */
     public static void pesananDibatalkan(Room kamar){
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         if(pesan != null) {
             pesan.setStatusSelesai(false);
             pesan.setStatusDiproses(false);
-            pesan.setRoom(null);
         }
         DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
     }
@@ -52,11 +58,11 @@ public class Administrasi
      * @param  kamar yang akan dipesan
      */
     public static void pesananSelesai(Room kamar){
-        Pesanan pesan = DatabasePesanan.getPesanan(kamar);
+        Pesanan pesan = DatabasePesanan.getPesananAktif(kamar);
         if(pesan != null) {
             pesan.setStatusSelesai(true);
             pesan.setStatusDiproses(false);
-            pesan.setRoom(null);
+
         }
         DatabaseRoom.getRoom(kamar.getHotel(), kamar.getNomorKamar()).setStatusKamar(StatusKamar.Vacant);
     }
@@ -70,7 +76,7 @@ public class Administrasi
         pesan.setStatusAktif(false);
         pesan.setStatusSelesai(false);
         pesan.setStatusDiproses(false);
-        pesan.setRoom(null);
+
     }
     /**
      * Method untuk memproses pesanan yang telah berhasil 

@@ -75,6 +75,7 @@ public class DatabasePesanan
         return null;
 
     }
+
     public static Pesanan getPesanan(int id)
     {
         for (Pesanan pesan : PESANAN_DATABASE) {
@@ -85,7 +86,7 @@ public class DatabasePesanan
         return null;
     }
 
-    public static Pesanan getPesanan(Room kamar)
+    public static Pesanan getPesananAktif(Room kamar)
     {
         for (Pesanan pesan : PESANAN_DATABASE) {
             if (kamar.equals(pesan.getRoom()) == true) {
