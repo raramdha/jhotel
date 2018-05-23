@@ -1,17 +1,17 @@
 package jhotel;
 /**
- * Write a description of class SingleRoom here.
+ * Class DoubleRoom menggambarkan detail kamar Hotel bertipe Single
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (12 Mei 2018)
  */
 public class SingleRoom extends Room
 {
-    // instance variables - replace the example below with your own
+    // instance variable yang digunakan
     private TipeKamar TIPE_KAMAR = TipeKamar.Single;
 
     /**
-     * Constructor for objects of class SingleRoom
+     * Constructor berisi object dari class SingleRoom
      */
     public SingleRoom(Hotel hotel, String nomor_kamar)
     {
@@ -19,10 +19,9 @@ public class SingleRoom extends Room
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Method getTipeKamar untuk mengambil kamar bertipe Double
      *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * @return tipe kamar
      */
     public TipeKamar getTipeKamar()
     {

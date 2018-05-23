@@ -1,10 +1,10 @@
 package jhotel;
 /**
  * Class Hotel menggambarkan detail dari Hotel yang terdiri
- * dari nama hotel, lokasi, dan bintang.
+ * dari id, nama hotel, lokasi, dan bintang.
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 public class Hotel
 {
@@ -33,15 +33,18 @@ public class Hotel
     public int getID(){
         return id;
     }
+
     /**
      * Method untuk mengambil bintang Hotel dalam bentuk integer
      * 
      * @return  bintang hotel
      */
+
     public int getBintang()
     {
         return bintang;
     }
+
     /**
      * Method untuk mengambil nama hotel dalam bentuk string
      *
@@ -51,6 +54,7 @@ public class Hotel
     {
         return nama;
     }
+
     /**
      * Method untuk mengambil lokasi dari Hotel
      *
@@ -60,6 +64,7 @@ public class Hotel
     {
         return lokasi;
     }
+
     /**
      * Method untuk menentukan id dari Hotel
      *
@@ -68,6 +73,7 @@ public class Hotel
     public void setID(int id){
         this.id = id;
     }
+
     /**
      * Method untuk menentukan bintang dari Hotel
      *
@@ -77,6 +83,7 @@ public class Hotel
     {
         this.bintang = bintang;
     }
+
     /**
      * Method untuk menentukan nama dari Hotel
      *
@@ -86,6 +93,7 @@ public class Hotel
     {
         this.nama = nama;
     }
+
     /**
      * Method untuk menentukan lokasi dari Hotel
      *
@@ -103,7 +111,6 @@ public class Hotel
     {
         return("\nHotel: " + nama+", Lokasi: " + lokasi.getDeskripsi()+
         ", Bintang: " + bintang + " ");
-        
     }
 }
     

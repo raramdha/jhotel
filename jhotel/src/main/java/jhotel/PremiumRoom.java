@@ -1,18 +1,18 @@
 package jhotel;
 /**
- * Write a description of class PremiumRoom here.
+ * Class DoubleRoom menggambarkan detail kamar Hotel bertipe Premium
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Ramdhaidfitri Martmis)
+ * @version (12 Mei 2018)
  */
 public class PremiumRoom extends Room
 {
-    // instance variables - replace the example below with your own
+    // instance variable yang digunakan
     private double DISCOUNT = 0.3;
     private TipeKamar TIPE_KAMAR = TipeKamar.Premium;
 
     /**
-     * Constructor for objects of class PremiumRoom
+     * Constructor berisi object dari class PremiumRoom
      */
     public PremiumRoom(Hotel hotel, String nomor_kamar)
     {
@@ -20,13 +20,20 @@ public class PremiumRoom extends Room
         
     }
 
-
+    /**
+     * Method getTipeKamar untuk mengambil kamar bertipe Double
+     *
+     * @return tipe kamar
+     */
     public TipeKamar getTipeKamar(){
         return TIPE_KAMAR;
     }
-    public double getDiscount(){
-        return DISCOUNT;
-    }
+
+    /**
+     * Method setDailyTariff untuk menentukan tarif sewa kamar
+     *
+     * @param dailytariff
+     */
     public void setDailyTariff(double dailytariff){
         dailytariff = dailytariff * DISCOUNT;
     }

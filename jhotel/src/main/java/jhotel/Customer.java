@@ -4,7 +4,7 @@ package jhotel;
  * kamar Hotel
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 import java.util.Date;
 import java.text.*;
@@ -21,6 +21,7 @@ public class Customer
     private String password;
 
     SimpleDateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy");
+
     /**
      * Constructor untuk object dari class Customer
      */
@@ -40,6 +41,7 @@ public class Customer
         this.email = email;
         this.password = password;
     }
+
     /**
      * Method untuk mengambil id Customer dalam bentuk 
      * integer
@@ -82,7 +84,7 @@ public class Customer
     /**
      * Method untuk mengambil password customer
      *
-     * @return  password
+     * @return  password customer
      */
     public String getPassword(){
         return password;

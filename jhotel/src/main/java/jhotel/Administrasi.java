@@ -5,7 +5,7 @@ package jhotel;
  * dari pesanan Hotel yang bersangkutan
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 public class Administrasi
 {
@@ -14,7 +14,6 @@ public class Administrasi
      */
     public Administrasi()
     {
-        // initialise instance variables
        
     }
 

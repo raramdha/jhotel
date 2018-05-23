@@ -4,7 +4,7 @@ package jhotel;
  * cara-cara memodifikasi data Customer
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 
 import java.util.ArrayList;
@@ -14,12 +14,12 @@ public class DatabaseCustomer
     //variabel-variabel yang digunakan
     private static ArrayList<Customer> CUSTOMER_DATABASE = new ArrayList<>();
     private static int LAST_CUSTOMER_ID = 0;
+
     /**
      * Constructor berisi object dari class DatabaseCustomer
      */
     public DatabaseCustomer()
     {
-        // initialise instance variables
     }
 
     /**
@@ -41,14 +41,14 @@ public class DatabaseCustomer
     }
 
     /**
-     * Method untuk menambahkan Customer baru ke dalam
-     * database
+     * Method untuk menambahkan Customer baru ke dalam database
+     *
      * @param baru (customer baru)
+     * @exception  PelangganSudahAdaException
      * @return  default dari tipe data boolean
      */
     public static boolean addCustomer(Customer baru) throws PelangganSudahAdaException {
-        for (Customer cust :
-                CUSTOMER_DATABASE) {
+        for (Customer cust : CUSTOMER_DATABASE) {
             if(cust.getID() == baru.getID() || cust.getEmail().compareTo(baru.getEmail()) == 0){
                 throw new PelangganSudahAdaException(baru);
             }
@@ -60,8 +60,8 @@ public class DatabaseCustomer
 
 
     /**
-     * Method untuk mengambil Customer dari database
-     * menggunakan id customer
+     * Method untuk mengambil Customer dari database menggunakan id customer
+     *
      * @param id customer
      * @return  default dari tipe data boolean
      */
@@ -72,6 +72,12 @@ public class DatabaseCustomer
         return null;
     }
 
+    /**
+     * Method untuk mengambil credentials Customer untuk melakukan login
+     *
+     * @param email dan password customer
+     * @return  default dari tipe data boolean
+     */
     public  static Customer getCustomerLogin(String email, String password)
     {
         for (Customer cust : CUSTOMER_DATABASE) {
@@ -87,6 +93,7 @@ public class DatabaseCustomer
      * Method untuk menghapus Customer dari database 
      * menggunakan id customer
      * @param id customer
+     * @exception  PelangganTidakDitemukanException
      * @return  default dari tipe data boolean
      */
     public static boolean removeCustomer(int id) throws PelangganTidakDitemukanException {

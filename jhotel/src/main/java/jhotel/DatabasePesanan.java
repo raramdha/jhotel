@@ -5,24 +5,23 @@ import java.util.*;
  * cara-cara memodifikasi data Pesanan
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 public class DatabasePesanan
 {
     //variabel-variabel yang digunakan
     private static ArrayList<Pesanan> PESANAN_DATABASE = new ArrayList<>();
     private static int LAST_PESANAN_ID;
+
     /**
      * Constructor berisi object dari class DatabasePesanan
      */
     public DatabasePesanan()
     {
-        // initialise instance variables
     }
     
     /**
-     * Method untuk menambahkan Pesanan baru ke dalam
-     * database Pesanan
+     * Method untuk menambahkan Pesanan baru ke dalam database Pesanan
      * 
      * @return  default dari tipe data boolean
      */
@@ -39,9 +38,9 @@ public class DatabasePesanan
     }
 
     /**
-     * Method untuk menghapus Pesanan dari
-     * database Pesanan
-     * 
+     * Method untuk menghapus Pesanan dari database Pesanan
+     * @param pesan
+     * @exception PesananTidakDitemukanException
      * @return  default dari tipe data boolean
      */
     public static boolean removePesanan(Pesanan pesan) throws PesananTidakDitemukanException
@@ -62,8 +61,8 @@ public class DatabasePesanan
     }
 
     /**
-     * Method untuk mengambil data Pesanan dari database
-     * 
+     * Method untuk mengambil data pesanan yang aktif dari database
+     * @param pelanggan
      * @return  default dari tipe data Pesanan
      */
     public static Pesanan getPesananAktif(Customer pelanggan){
@@ -76,6 +75,11 @@ public class DatabasePesanan
 
     }
 
+    /**
+     * Method untuk mengambil data Pesanan dari database
+     * @param id pesanan
+     * @return  default dari tipe data Pesanan
+     */
     public static Pesanan getPesanan(int id)
     {
         for (Pesanan pesan : PESANAN_DATABASE) {
@@ -86,6 +90,11 @@ public class DatabasePesanan
         return null;
     }
 
+    /**
+     * Method untuk mengambil data pesanan yang aktif dari database
+     * @param kamar
+     * @return  default dari tipe data Pesanan
+     */
     public static Pesanan getPesananAktif(Room kamar)
     {
         for (Pesanan pesan : PESANAN_DATABASE) {
@@ -95,15 +104,22 @@ public class DatabasePesanan
         }
         return null;
     }
+
     /**
      * Method untuk mengambil isi database Pesanan
      * 
-     * @return  default dari tipe data String
+     * @return  pesanan pada database
      */
     public static ArrayList<Pesanan> getPesananDatabase()
     {
         return PESANAN_DATABASE;
     }
+
+    /**
+     * Method untuk mengambil id pesanan terakhir
+     *
+     * @return  pesanan terakhir
+     */
     public static int getLastPesananID(){
         return LAST_PESANAN_ID;
     }

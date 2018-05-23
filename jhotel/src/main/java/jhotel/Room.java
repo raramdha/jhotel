@@ -4,7 +4,7 @@ package jhotel;
  * dapat dipesan
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 public abstract class Room
 {
@@ -33,6 +33,7 @@ public abstract class Room
     {
         return hotel;
     }
+
     /**
      * Method untuk mengambil nomor kamar yang bersangkutan
      *
@@ -51,6 +52,7 @@ public abstract class Room
     public double getDailyTariff(){
         return dailyTariff;
     }
+
     /**
      * Method untuk mengambil status kamar yang bersangkutan
      *
@@ -59,21 +61,49 @@ public abstract class Room
     public StatusKamar getStatusKamar(){
         return status_kamar;
     }
-    
+
+    /**
+     * Method abstract untuk mengambil tipe kamar yang bersangkutan
+     */
     public abstract TipeKamar getTipeKamar();
-    
+
+    /**
+     * Method untuk menentukan detail Hotel
+     *
+     * @param hotel yang bersangkutan
+     */
     public void setHotel(Hotel hotel)
     {
         this.hotel = hotel;
     }
+
+    /**
+     * Method untuk menentukan nomor kamar yang bersangkutan
+     *
+     * @param  nomor_kamar yang bersangkutan
+     */
     public void setNomorKamar(String nomor_kamar)
     {
         this.nomor_kamar = nomor_kamar;
     }
+
+    /**
+     * Method untuk menentukan harga sewa kamar yang bersangkutan
+     * per harinya
+     *
+     * @param dailytariff (harga sewa kamar per hari)
+     */
     public void setDailyTariff(double dailytariff){
         dailyTariff = dailytariff;
     }
+
+    /**
+     * Method untuk menentukan status kamar yang bersangkutan
+     *
+     * @param status_kamar yang bersangkutan
+     */
     public void setStatusKamar(StatusKamar status_kamar){ this.status_kamar=status_kamar; }
+
     /**
      * Method untuk menampilkan detail kamar Hotel
      */

@@ -3,7 +3,7 @@ package jhotel;
  * Class Lokasi menggambarkan detail dari lokasi suatu Hotel.
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 public class Lokasi
 {
@@ -33,6 +33,7 @@ public class Lokasi
     {
         return x_coord;
     }
+
     /**
      * Method untuk mengambil koordinat Y dari lokasi Hotel
      * dalam bentuk float
@@ -43,6 +44,7 @@ public class Lokasi
     {
         return y_coord;
     }
+
     /**
      * Method untuk mengambil deskripsi dari lokasi Hotel
      * dalam bentuk string
@@ -53,6 +55,7 @@ public class Lokasi
     {
         return deskripsiLokasi;
     }
+
     /**
      * Method untuk menentukan koordinat X dari lokasi Hotel
      * dalam bentuk float
@@ -63,6 +66,7 @@ public class Lokasi
     {
         this.x_coord = x_coord;
     }
+
     /**
      * Method untuk menentukan koordinat Y dari lokasi Hotel
      * dalam bentuk float
@@ -73,6 +77,7 @@ public class Lokasi
     {
         this.y_coord = y_coord;
     }
+
     /**
      * Method untuk menentukan deskripsi dari lokasi Hotel
      * dalam bentuk string
@@ -83,6 +88,12 @@ public class Lokasi
     {
         deskripsiLokasi = deskripsi;
     }
+
+    /**
+     * Method untuk menampilkan detail lokasi dari suatu
+     * Hotel
+     */
+
     public String toString(){
         return null;
     }

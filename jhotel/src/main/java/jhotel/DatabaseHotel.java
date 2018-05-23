@@ -4,7 +4,7 @@ package jhotel;
  * memodifikasi data Hotel
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (10 Maret 2018)
+ * @version (12 Mei 2018)
  */
 
 import java.util.ArrayList;
@@ -14,10 +14,9 @@ public class DatabaseHotel {
     private static int LAST_HOTEL_ID = 0;
 
     /**
-     * Constructor for objects of class DatabaseHotel
+     * Constructor berisi object dari class DatabaseHotel
      */
     public DatabaseHotel() {
-        // initialise instance variables
     }
 
     /**
@@ -41,10 +40,9 @@ public class DatabaseHotel {
     }
 
     /**
-     * Method addHotel untuk menambahkan data hotel baru ke
-     * dalam Database
-     *
+     * Method addHotel untuk menambahkan data hotel baru ke dalam Database
      * @param baru (hotel yang akan ditambahkan)
+     * @exception HotelSudahAdaException
      * @return default dari tipe data boolean
      */
     public static boolean addHotel(Hotel baru) throws HotelSudahAdaException{
@@ -74,10 +72,9 @@ public class DatabaseHotel {
     }
 
     /**
-     * Method removeHotel untuk menghapus data hotel yang ada
-     * dalam Database
-     *
+     * Method removeHotel untuk menghapus data hotel yang ada dalam Database
      * @param id hotel yang akan dihapus
+     * @exception HotelTidakDitemukanException
      * @return default dari tipe data boolean
      */
     public static boolean removeHotel(int id) throws HotelTidakDitemukanException {

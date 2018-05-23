@@ -1,37 +1,38 @@
 package jhotel;
 import java.util.ArrayList;
 /**
- * Write a description of class DatabaseRoom here.
+ * Class DatabaseRoom menggambarkan detail dari
+ * cara-cara memodifikasi data kamar Hotel
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (18 April 2018)
+ * @version (12 Mei 2018)
  */
 public class DatabaseRoom
 {
+    //variabel-variabel yang digunakan
     private static ArrayList<Room> ROOM_DATABASE = new ArrayList<>();
 
     /**
-     * Constructor for objects of class DatabaseRoom
+     * Constructor berisi object dari class DatabaseRoom
      */
     public DatabaseRoom()
     {
-        // initialise instance variables
     }
+
     /**
      * Method getRoomDatabase untuk mengambil keseluruhan
      * data Room yang akan disimpan dalam Database
      *
-     * @return  default dari tipe data String
+     * @return  data pada database room
      */
     public static ArrayList<Room> getRoomDatabase(){
         return ROOM_DATABASE;
     }
 
     /**
-     * Method addRoom untuk menambahkan data Room baru ke
-     * dalam Database
-     *
+     * Method addRoom untuk menambahkan data Room baru ke dalam Database
      * @param  baru (kamar yang akan ditambahkan)
+     * @exception RoomSudahAdaException
      * @return  default dari tipe data boolean
      */
     public static boolean addRoom(Room baru) throws RoomSudahAdaException{
@@ -50,7 +51,11 @@ public class DatabaseRoom
         else return false;
     }
 
-
+    /**
+     * Method getRoom untuk mengambil data Room untuk dimasukkan ke dalam Database
+     * @param  hotel dan nomor kamar
+     * @return  default dari tipe data boolean
+     */
     public static Room getRoom(Hotel hotel, String nomor_kamar)
     {
         for (Room kamar :
@@ -61,6 +66,12 @@ public class DatabaseRoom
         }
         return null;
     }
+
+    /**
+     * Method getRoomsFromHotel untuk mengambil data Room dari Database Hotel
+     * @param  hotel
+     * @return  toReturn
+     */
     public static ArrayList<Room> getRoomsFromHotel(Hotel hotel){
         ArrayList<Room> toReturn = new ArrayList<>();
         for (Room kamar :
@@ -72,6 +83,10 @@ public class DatabaseRoom
         return toReturn;
     }
 
+    /**
+     * Method getVacantRooms untuk mengambil data Room yang berstatus Vacant
+     * @return  toReturn
+     */
     public static ArrayList<Room> getVacantRooms(){
         ArrayList<Room> toReturn = new ArrayList<>();
         for (Room kamar : ROOM_DATABASE) {
@@ -82,14 +97,10 @@ public class DatabaseRoom
         return toReturn;
     }
 
-
-
-
     /**
-     * Method removeRoom untuk menghapus data Room yang ada
-     * dalam Database
-     *
+     * Method removeRoom untuk menghapus data Room yang ada dalam Database
      * @param   hotel dan nomor kamar yang akan dihapus
+     * @exception RoomTidakDitemukanException
      * @return  default dari tipe data boolean
      */
     public static boolean removeRoom(Hotel hotel, String nomor_kamar) throws RoomTidakDitemukanException{

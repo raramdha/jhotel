@@ -4,9 +4,9 @@ package jhotel;
  * yang dapat dilakukan pada Hotel
  *
  * @author (Ramdhaidfitri Martmis)
- * @version (1- Maret 2018)
+ * @version (12 Mei 2018)
  */
-import java.util.GregorianCalendar;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -18,33 +18,40 @@ public class JHotel
      * Constructor untuk object dari class JHotel
      */
     public JHotel(){
-        
     }
+
     /**
      * Method untuk memanggil proses apapun terhadap Hotel
      * 
      * argumen dengan tipe data String
      */
     public static void main(String args[]) {
-        SpringApplication.run(JHotel.class, args);
-
         try {
-            DatabaseHotel.addHotel(new Hotel("AB", new Lokasi(200, 100, "asdf"), 4));
-            DatabaseHotel.addHotel(new Hotel("BA", new Lokasi(500, 600, "asd"), 3));
-
+            DatabaseHotel.addHotel(new Hotel("Hyatt", new Lokasi(200, 100, "Jakarta"), 5));
+        }
+        catch (HotelSudahAdaException ex){
+            ex.getPesan();
+        }
+        try{
             DatabaseRoom.addRoom(new SingleRoom(DatabaseHotel.getHotel(1), "A101"));
+        }
+        catch(RoomSudahAdaException ex){
+            ex.getPesan();
+        }
+        try{
             DatabaseRoom.addRoom(new DoubleRoom(DatabaseHotel.getHotel(1), "A201"));
-            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(2), "A501"));
+        }
+        catch(RoomSudahAdaException ex){
+            ex.getPesan();
+        }
+        try{
+            DatabaseRoom.addRoom(new PremiumRoom(DatabaseHotel.getHotel(1), "A501"));
+        }
+        catch(RoomSudahAdaException ex){
+            ex.getPesan();
+        }
 
-        }
-        catch (HotelSudahAdaException p) {
-            System.out.println("\n>>>TES HOTEL SUDAH ADA BERHASIL<<<");
-            System.out.println(p.getPesan());
-        }
-        catch (RoomSudahAdaException p) {
-            System.out.println("\n>>>TES KAMAR SUDAH ADA BERHASIL<<<");
-            System.out.println(p.getPesan());
-        }
+        SpringApplication.run(JHotel.class, args);
 
 
     }
